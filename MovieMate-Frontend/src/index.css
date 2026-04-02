@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* FORM BOX */
+.form-box {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 10px;
+  width: 320px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADING */
+.form-box h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+.form-box input {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+/* BUTTON */
+.form-box button {
+  margin-top: 10px;
+  padding: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* TEXT */
+.form-box p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.form-box span {
+  color: cyan;
+  cursor: pointer;
+}
+
+.mm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 30px;
+  background: black;
+  color: white;
+}
+
+/* LOGO LEFT */
+.mm-logo {
+  width: 120px;
+}
+
+/* RIGHT SIDE */
+.mm-header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto; /* 🔥 IMPORTANT LINE */
+}
+
+/* USER */
+.mm-user {
+  margin: 0;
+}
+
+/* BUTTON */
+.mm-btn {
+  padding: 6px 12px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
