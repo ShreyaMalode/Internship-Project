@@ -1,127 +1,1093 @@
-/* GLOBAL */
-body {
+/* Reset */
+* {
   margin: 0;
-  background-color: #141414;
-  color: white;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
-/* HEADER */
-.mm-header {
+/* Header styling (TOP NAVBAR)*/
+.header {
   position: fixed;
   top: 0;
+  left: 0;
+  
   width: 100%;
-  z-index: 1000;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
- padding: 15px 20px; 
+  padding-right: 20px ;
+  z-index: 10;
 
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+  background: linear-gradient(to bottom, black, transparent);
 }
 
-/* LOGO */
-.mm-logo-text {
-  font-size: 24px;
-  font-weight: bold;
+.hero-content {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  color: white;
+  z-index: 10;
 }
 
-/* SEARCH */
-.mm-search {
-  width: 30%; 
-  padding: 8px 15px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  margin-left: 20px;
-}
-
-/* RIGHT SIDE */
-.mm-header-right {
+/* Right section (profile + buttons)*/
+.header-right {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-wrap: nowrap;     
 }
 
-/* USER */
-.mm-user {
+/* Profile section */
+.profile {
   display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.mm-username {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* ICONS */
-.mm-icon {
-  display: flex;
+  color: white;
   align-items: center;
   gap: 5px;
-  cursor: pointer;
-  font-size: 14px;
 }
 
-/* BUTTON */
-.mm-btn {
-  padding: 6px 14px;
-  background: red;
-  border: none;
+/* Logo styling */
+.logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Username */
+.username {
   color: white;
-  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Button container */
+.button-group {
+  margin-left: 16px;
+}
+
+/* Buttons */
+.btn {
+  background-color: #991b1b;
+  color: white;
+  padding: 8px 16px;
+  border: none;
   cursor: pointer;
-  margin-right:20px;
-
-  white-space: nowrap;  
 }
 
+/* Space between buttons */
+.btn+.btn {
+  margin-left: 8px;
+}
 
-/* HERO */
-.mm-hero {
-  position: relative;
-  height: 85vh;   
+/* ================= BACKGROUND / BANNER ================= */
+.banner {
+  position: fixed;
+  /* important */
+  top: 0;
+  left: 0;
   width: 100%;
- 
+  height: 100vh;
+
+  background-image: url("../assets/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1;
 }
 
-/* VIDEO */
-.mm-video {
+.banner-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/*Form*/
+/* Container */
+.login-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
 
-/* HERO TEXT */
-.mm-hero-content h1 {
-  color: rgb(171, 31, 31);         
-  font-size: 50px;
+/* Full page container */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Form */
+.login-form {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 320px;
+  padding: 30px;
+
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+/* Heading */
+.login-form h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+
+  border: 2px solid transparent;
+  border-radius: 5px;
+
+  background: #eee;
+  color: black;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+/*  Red border on focus */
+.login-form input:focus {
+  border: 2px solid #e50914;
+  background: #fff;
+}
+
+/* Button */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+
+  background: #e50914;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background: #f6121d;
+}
+
+/* Text */
+.login-form p {
+  color: white;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+.login-form p span {
+  color: #00bfff;
+  /* blue link */
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.login-form p span:hover {
+  text-decoration: underline;
+}
+
+/* ================= HERO VIDEO SECTION ================= */
+
+/* Full screen video container */
+.video-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+/* YouTube iframe full cover */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /*  FULL WIDTH */
+  height: 100vh;
+  /*  FULL HEIGHT */
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* iframe video */
+.video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+
+/* Dark gradient overlay (text visible banane ke liye) */
+.video-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* ================= TITLE OVER VIDEO ================= */
+
+/* Title + description container */
+.video-title {
+  position: absolute;
+  top: 30%;
+  /* vertical position */
+  left: 60px;
+  /* left spacing */
+  z-index: 20;
+  max-width: 500px;
+  color: white;
+}
+
+/* Movie title */
+.title-heading {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Movie description */
+.title-desc {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: white;
+}
+
+/* ================= BUTTONS ================= */
+
+/* Button container */
+.btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+/* Play button */
+.play-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.mm-hero-content p {
-  color: rgb(177, 44, 44);          
-  font-size: 18px;
-}
-.mm-hero-content {
-  position: absolute;
-  top: 35%;   
-  left: 50px;
-  z-index: 2;
-  max-width: 500px;
+.play-btn:hover {
+  opacity: 0.8;
 }
 
-/* GRADIENT (BOTTOM FADE) */
-.mm-hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
+/* Info button */
+.info-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: rgba(128, 128, 128, 0.6);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.info-btn:hover {
+  opacity: 0.8;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+/* Full hero section */
+.main-container {
+  position: relative;
   width: 100%;
-  height: 80px;   
-  background: linear-gradient(to top, #141414, transparent);
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* ================= MOVIE SECTION ================= */
+
+/* Neeche wala movie scroll section */
+.movie-container {
+  position: relative;
+  z-index: 5;
+  margin-top: 0;
+  padding-top: 40px;
+  /* video ke upar overlap */
+  background: black;
+  overflow: visible;
+}
+
+/* Movie list container (each category) */
+.movie-list {
+  padding: 10px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Category heading (Popular, Now Playing...) */
+.movie-heading {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 8px;
+  margin: 5px 0;
+}
+
+/* Horizontal scroll row */
+.movie-row {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: visible;
+  gap: 16px;
+
+  padding: 20px 20px;
+
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+/* Scrollbar hide */
+.movie-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= MOVIE CARD ================= */
+
+/* Each movie card */
+
+/* Movie image */
+.movie-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+
+/* Movie title under image */
+.movie-title {
+  color: white;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* ================= SEARCH BOX (TOP) ================= */
+
+/* Search container center */
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  width: 100%;
+}
+
+/* Form width */
+.search-form {
+  width: 50%;
+}
+
+/* Input + Button box */
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Input field */
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+/* Search button */
+.search-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Button hover */
+.search-button:hover {
+  background-color: #b20710;
+}
+
+
+/* ================= SEARCH RESULT (BOTTOM) ================= */
+
+/* Full result section */
+.search-result {
+  background-color: white;
+   padding: 10px 40px 30px 40px;
+  min-height: 100vh;
+}
+
+.search-result .movie-row {
+  padding: 10px 0;
+  gap: 12px;
+}
+
+/* Heading (Search Results) */
+.search-result .movie-heading {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding-left: 40px;
+}
+
+/* Movies layout → GRID */
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Each movie card */
+.search-result .movie-card {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.search-result .movie-card:hover {
+  transform: scale(1.08);
+}
+
+/* Movie image */
+.search-result .movie-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Movie title */
+.search-result .movie-title {
+  color: black;
+  font-size: 14px;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.recommended-section {
+  background: white;
+  padding: 10px 40px 30px 40px;
+  margin-top: 0px;
+  padding-top: 0;
+}
+
+
+.recommended-section .movie-row {
+  padding: 10px 0;
+  
+}
+
+.recommended-section .movie-list {
+  padding-top: 0;
+}
+
+.search-result .movie-list {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* POPUP OVERLAY (background blur + dark) */
+/* popup video full size */
+.popup-video {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.MuiDialog-root {
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* REMOVE WHITE BOX */
+.MuiDialog-paper {
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+/*  VIDEO CONTAINER */
+.popup-video-container {
+  width: 900px;
+  max-width: 95vw;
+  border-radius: 10px;
+  overflow: hidden;
+  background: black;
+}
+
+/*  VIDEO FULL SIZE */
+.popup-video-container iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+/* CLOSE BUTTON  */
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.popup-close:hover {
+  background: red;
+}
+
+/* plus button stable */
+.plus-inline {
+  min-width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+}
+
+/* ================= FLOATING POPUP ================= */
+/* BIGGER PREMIUM POPUP */
+.movie-card {
+  position: relative;
+  width: 180px;
+  height: 260px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+
+
+/* POPUP */
+.hotstar-popup {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+
+  width: 320px;
+  background: #141414;
+  border-radius: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+
+  z-index: 9999;
+}
+
+.popup-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* CONTENT */
+.popup-content {
+  padding: 12px;
+}
+
+/* ACTION ROW (IMPORTANT) */
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* WATCH NOW */
+.watch-now {
+  flex: 1;
+  padding: 12px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* plus button */
+.plus-inline {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* message (top popup) */
+
+.watch-msg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* META */
+.meta {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+/* DESCRIPTION  */
+.desc {
+  font-size: 13px;
+  color: #ccc;
+  margin-top: 6px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* SCROLLBAR SMALL */
+.desc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.desc::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* =================(WATCHLIST UI) ================= */
+/* wrapper for positioning */
+.watchlist-wrapper {
+  position: relative;
+}
+
+/* tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+
+
+.player-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+}
+
+.player-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.player-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.player-controls button.active {
+  background: red;
+  color: white;
+}
+
+
+.movie-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hover-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.movie-card:hover .movie-inner {
+  transform: scale(1.15);
+}
+
+.movie-card:hover .hotstar-popup {
+  opacity: 1;
+  transform: translate(-50%, -20px) scale(1);
+  pointer-events: auto;
+}
+
+
+
+
+.meta-row {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.meta-item.rating {
+  color: gold;
+  font-weight: bold;
+}
+
+.genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.genre-pill {
+  font-size: 10px;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.badge-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.badge.red {
+  background: red;
+}
+
+.badge.gold {
+  background: gold;
+  color: black;
+}
+
+.badge.green {
+  background: green;
+}
+
+
+/* FULL PLAYER */
+.yt-player {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+/* VIDEO FULL COVER */
+.yt-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* CLOSE BUTTON */
+.yt-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+
+/* CONTROLS BAR */
+.yt-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+/* BUTTON */
+.yt-controls button {
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ICON SIZE */
+.yt-controls svg {
+  font-size: 24px;
+}
+
+/* ACTIVE (BLUE LIKE NETFLIX) */
+.yt-controls button.active {
+  background: #2563eb;
+  color: white;
+}
+
+
+.movie-heading.dark {
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* ===== FORCE GAP REMOVE  ===== */
+
+.search-page .search-result {
+  padding: 10px 40px 0px 40px !important;
+  margin-bottom: 0 !important;
+}
+
+.search-page .movie-list {
+  padding: 0 40px !important;
+  margin: 0 !important;
+}
+
+.search-page .movie-row {
+  padding: 10px 0 !important;
+  margin: 0 !important;
+}
+
+.search-page .recommended-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+.search-page .search-result+.recommended-section {
+  margin-top: -10px !important;
+}
+
+.search-page .search-result>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+
+
+/*CONTROL BAR */
+.netflix-controls {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 20px;
+
+  background: rgba(20, 20, 20, 0.9);
+  padding: 12px 22px;
+  border-radius: 40px;
+
+  z-index: 20;
+}
+
+/* BUTTON STYLE */
+.netflix-controls button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/*  ACTIVE (BLUE EFFECT) */
+.netflix-controls button.active {
+  color: #3ea6ff;
+}
+
+/* HOVER EFFECT */
+.netflix-controls button:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* HEADING */
+.playlist-heading {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* ROW */
+.playlist-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+/* HIDE SCROLLBAR */
+.playlist-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD SIZE FIX */
+.playlist-row .movie-card {
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+
+
+
+.playlist-page {
+  padding: 100px 40px 40px;
+  background: black;
+}
+
+.playlist-section {
+  margin-bottom: 40px;
+}
+
+.playlist-section h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.playlist-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }

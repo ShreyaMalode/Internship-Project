@@ -1,12 +1,17 @@
 import React from "react";
 
-const VideoBackground = () => {
+const VideoBackground = ({ trailer, muted }) => {
   return (
-    <video className="mm-video" autoPlay loop muted>
-      <source src="/videos/hero.mp4" type="video/mp4" />
-    </video>
+    <iframe
+      key={muted} // 🔥 re-render jab mute change ho
+      className="video-frame"
+      src={`https://www.youtube.com/embed/${trailer}?autoplay=1&mute=${muted ? 1 : 0}&controls=0&loop=1&playlist=${trailer}&playsinline=1`}
+      title="YouTube video player"
+      frameBorder="0"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    />
   );
 };
 
 export default VideoBackground;
-

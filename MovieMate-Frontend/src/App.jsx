@@ -1,33 +1,15 @@
-// import './App.css'
-// import { Toaster } from 'react-hot-toast';
-
-// import Body from './components/Body'
-
-
-// function App() {
- 
-
-//   return (
-//     <>
-//    <Body/>
-//     <Toaster />
-    
-//     </>
-//   )
-// }
-
-// export default App
-
 import React from "react";
 import Body from "./components/Body";
-import { Toaster } from "react-hot-toast";
-
+import { Toaster } from 'react-hot-toast';
+import "./styles/moviemate.css";
+import MovieDialog from "./components/MovieDialog";
 function App() {
   return (
-    <>
+    <div>
       <Body />
       <Toaster />
-    </>
+      <MovieDialog />
+    </div>
   );
 }
 

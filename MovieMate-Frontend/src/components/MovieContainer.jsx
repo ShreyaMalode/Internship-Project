@@ -1,39 +1,33 @@
 import React from "react";
+import MovieList from "./MovieList";
+import WatchlistRow from "./WatchlistRow";
+import { useSelector } from "react-redux";
 
-const MovieContainer = ({
-  movies,
-  setVideo,
-  liked,
-  watchlist,
-  setLiked,
-  setWatchlist
-}) => {
+const MovieContainer = () => {
+  const {
+    nowPlayingMovies,
+    popularMovie,
+    topRatedMovies,
+    upcomingMovies,
+    searchMovies
+  } = useSelector(store => store.movie);
+
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: 10, padding: 20 }}>
+    <div className="movie-container">
 
-      {movies.map(movie => (
-        <div key={movie.id} style={{ width: 200 }}>
+      {/* WATCHLIST TOP SLIDER */}
+      <WatchlistRow />
 
-          {/* POSTER CLICK → OPEN VIDEO */}
-          <img
-            src={movie.poster}
-            alt={movie.title}
-            style={{ width: "100%", cursor: "pointer" }}
-            onClick={() => setVideo(movie)}
-          />
-
-          <h4 style={{ color: "white" }}>{movie.title}</h4>
-
-          <button onClick={() => setLiked([...liked, movie])}>
-            ❤️ Like
-          </button>
-
-          <button onClick={() => setWatchlist([...watchlist, movie])}>
-            📌 Watchlist
-          </button>
-
-        </div>
-      ))}
+      {searchMovies ? (
+        <MovieList title="Search Results" movies={searchMovies} />
+      ) : (
+        <>
+          <MovieList title="Now Playing" movies={nowPlayingMovies} />
+          <MovieList title="Popular" movies={popularMovie} />
+          <MovieList title="Top Rated" movies={topRatedMovies} />
+          <MovieList title="Upcoming" movies={upcomingMovies} />
+        </>
+      )}
 
     </div>
   );

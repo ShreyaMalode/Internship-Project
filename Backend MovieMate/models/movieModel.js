@@ -1,16 +1,14 @@
 import mongoose from "mongoose";
 
-const movieSchema = new mongoose.Schema(
-  {
-    title: String,
-    category: String,
-    poster: String,
-    banner: String,
-    video: String,
-    rating: Number,
-    year: Number,
-  },
-  { timestamps: true }
-);
+const movieSchema = new mongoose.Schema({
+  title: String,
+  overview: String,
+  poster_path: String,
+  category: String,
+  tmdbId: Number,
+  trailer: String
+});
 
-export default mongoose.model("Movie", movieSchema);
+const Movie = mongoose.model("Movie", movieSchema);
+
+export default Movie;
